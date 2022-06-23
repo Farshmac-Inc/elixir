@@ -24,6 +24,7 @@ defmodule SpeelbookFateev.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import SpeelbookFateev.DataCase
+      import SpeelbookFateev.Factories
     end
   end
 

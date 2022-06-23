@@ -5,7 +5,7 @@ defmodule SpeelbookFateev.Schools.Queries.GetSchoolTest do
 
   @tag :getschool
   test "process/1 get school by id" do
-    school = insert(:school)
+    school = insert(:school) |> IO.inspect
     Schools.get_school(school.id)
     assert {:ok, result} = Schools.get_school(school.id)
     assert school.id == result.id

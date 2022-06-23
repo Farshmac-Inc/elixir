@@ -23,6 +23,7 @@ defmodule SpeelbookFateevWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import SpeelbookFateevWeb.ConnCase
+      import SpeelbookFateev.DataCase
 
       alias SpeelbookFateevWeb.Router.Helpers, as: Routes
 
