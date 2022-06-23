@@ -18,7 +18,7 @@ defmodule SpeelbookFateev.Spells.Entities.Spell do
     field :duration, :string
     field :description, :string
 
-    #has_many :listspell, Speel
+    many_to_many :spellbooks, Spellbook, join_through: "spelllist"
 
     timestamps()
   end

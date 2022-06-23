@@ -9,6 +9,7 @@ defmodule SpeelbookFateev.Accounts.Entities.User do
     field :email, EmailEctoType
     field :password, :string, virtual: true
     field :password_hash, :string
+    many_to_many :spelllist, Spellist, join_through: "spellbooks"
 
     timestamps()
   end
@@ -19,7 +20,7 @@ defmodule SpeelbookFateev.Accounts.Entities.User do
     |> validate_required(@required)
     |> unique_constraint(:email, message: "taken")
     |> validate_format(:password, ~r/^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}/, message: "invalid_format")
-    #|> put_password_hash()
+    |> put_password_hash()
   end
 
   defp put_password_hash(%{valid?: true, changes: %{password: password}} = changeset) do
