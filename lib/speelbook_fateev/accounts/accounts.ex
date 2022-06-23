@@ -1,11 +1,11 @@
-defmodule Charlist.Accounts do
-  alias Charlist.Accounts.Commands.{
+defmodule SpeelbookFateev.Accounts do
+  alias SpeelbookFateev.Accounts.Commands.{
     CreateUser,
     DeleteUser,
     UpdateUser
   }
 
-  alias Charlist.Accounts.Queries.{
+  alias SpeelbookFateev.Accounts.Queries.{
     GetUser,
     ListUsers
   }

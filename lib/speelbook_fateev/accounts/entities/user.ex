@@ -19,7 +19,7 @@ defmodule SpeelbookFateev.Accounts.Entities.User do
     |> validate_required(@required)
     |> unique_constraint(:email, message: "taken")
     |> validate_format(:password, ~r/^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}/, message: "invalid_format")
-    |> put_password_hash()
+    #|> put_password_hash()
   end
 
   defp put_password_hash(%{valid?: true, changes: %{password: password}} = changeset) do
@@ -28,3 +28,4 @@ defmodule SpeelbookFateev.Accounts.Entities.User do
 
   defp put_password_hash(changeset), do: changeset
 end
+#SpeelbookFateev.Accounts.Commands.CreateUser.process(%{email: "123@gmail.com", password: "12432dadw431"})
